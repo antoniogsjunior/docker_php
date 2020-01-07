@@ -4,6 +4,10 @@
 
 docker-compose up -d
 
+## Entrar no Docker 
+
+docker-compose exec app bash
+
 ## Para Docker Compose
 
 docker-compose stop

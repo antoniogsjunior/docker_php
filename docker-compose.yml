@@ -12,13 +12,14 @@ services:
     image: mysql:5.7.22
     command: --innodb-use-native-aio=0
     restart: always
-    ports:
-      - "3306"
     volumes:
       - "./.docker/dbdata:/var/lib/mysql"
     environment:
-      MYSQL_DATABASE: docker
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: "dev_mysql"
+      MYSQL_PASSWORD: "root"
+      MYSQL_ROOT_PASSWORD: "root"
+    ports:
+       - "3344:3306"
 
   nginx:
     build: ./.docker/nginx

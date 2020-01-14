@@ -8,13 +8,15 @@ docker-compose up -d
 
 docker-compose exec app bash
 
-## Para Docker Compose
+## Rodar as Migrate 
 
-docker-compose stop
+php artisan migrate
 
-## Remover Docker Compose
+obs: para usar o migrate entre primeiro no docker, para instalar libs com o compose também.
 
-docker-compose rm
+## Remover Todos os Docker
+
+docker-compose down
 
 ## Pasta .docker
 

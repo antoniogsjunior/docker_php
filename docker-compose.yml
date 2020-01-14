@@ -5,21 +5,20 @@ services:
     volumes:
       - ./:/var/www
     depends_on:
-      - mysql
-      - redis
+      - appbd
 
-  mysql:
-    image: mysql:5.7.22
+  appbd:
+    image: mysql:5.7
     command: --innodb-use-native-aio=0
     restart: always
     volumes:
       - "./.docker/dbdata:/var/lib/mysql"
     environment:
-      MYSQL_DATABASE: "dev_mysql"
+      MYSQL_DATABASE: "development_mysql"
       MYSQL_PASSWORD: "root"
       MYSQL_ROOT_PASSWORD: "root"
     ports:
-       - "3344:3306"
+       - "3306"
 
   nginx:
     build: ./.docker/nginx
@@ -30,8 +29,3 @@ services:
       - ./:/var/www
     depends_on:
       - app
-
-  redis:
-    image: redis:alpine
-    expose:
-      - 6379

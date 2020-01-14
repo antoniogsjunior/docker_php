@@ -18,6 +18,10 @@ obs: para usar o migrate entre primeiro no docker, para instalar libs com o comp
 
 docker-compose down
 
+## Utilizando um sgbd 
+
+banco de dados app-mysql porta 33456 usuário root senha root
+
 ## Pasta .docker
 
 Docker do nginx e seu arquivo de configuração 

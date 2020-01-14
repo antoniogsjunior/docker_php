@@ -18,7 +18,7 @@ services:
       MYSQL_PASSWORD: "root"
       MYSQL_ROOT_PASSWORD: "root"
     ports:
-       - "3306"
+       - "33456:3306"
 
   nginx:
     build: ./.docker/nginx

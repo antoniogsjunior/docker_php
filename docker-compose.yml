@@ -4,6 +4,8 @@ services:
     build: .
     volumes:
       - ./:/var/www
+    ports:
+        - "8000:8000"
     depends_on:
       - appbd
 
@@ -19,13 +21,3 @@ services:
       MYSQL_ROOT_PASSWORD: "root"
     ports:
        - "33456:3306"
-
-  nginx:
-    build: ./.docker/nginx
-    restart: always
-    ports:
-      - "8080:80"
-    volumes:
-      - ./:/var/www
-    depends_on:
-      - app
